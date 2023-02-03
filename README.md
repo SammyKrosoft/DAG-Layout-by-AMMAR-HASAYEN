@@ -13,4 +13,4 @@ Thanks Ammar for your great work on this that still help Microsoft Engineers to 
 
 Either copy/paste the text from the "raw" script data from the repo, or right-click Save As on the below link:
 
-[DAG_Layout.ps1 (right-click Save Link As](https://raw.githubusercontent.com/SammyKrosoft/DAG-Layout-by-AMMAR-HASAYEN/main/DAGLayout.ps1)
+[DAG_Layout.ps1 (right-click Save Link As)](https://raw.githubusercontent.com/SammyKrosoft/DAG-Layout-by-AMMAR-HASAYEN/main/DAGLayout.ps1)
