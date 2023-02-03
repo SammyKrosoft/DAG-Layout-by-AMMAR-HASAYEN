@@ -50,9 +50,9 @@ Red cells, represent the server on which the database is mounted and it happens 
 
 [CmdletBinding()]
 Param (
-   [string]$eMailSender="administrator@canadadrey.ca",
-   [string]$eMailRecipient="administrator@canadadrey.ca",
-   [string]$eMailServer="E2019-01@canadadrey.ca"
+   [string]$eMailSender="no-reply@canadadrey.ca",
+   [string]$eMailRecipient="samdrey@canadadrey.ca",
+   [string]$eMailServer="mail.canadadrey.ca"
 )
 
 $CurrentScriptLocation = Get-Location
