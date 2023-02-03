@@ -11,7 +11,10 @@ Thanks Ammar for your great work on this that still help Microsoft Engineers to 
 
 # Usage
 
-- The result is an HTML file saved on the script's directory that you can send on the e-mail address of your choice.
+- The result is an HTML file saved on the script's directory that you can send on the e-mail address of your choice, and will look like the below:
+
+<img width="332" alt="image" src="https://user-images.githubusercontent.com/33433229/216522894-2297a8eb-ea6b-4314-84b8-239dc920f8f3.png">
+
 
 - To update the e-mail address you want to send the report to, either use the -eMailSender, -eMailRecipient, and -eMailServer while launching the script, or hard code the default values of the parameters $eMailSender, $eMailRecipient and $eMailServer on the parameters definition on lines 53, 54, 55 of the script, and then just launch the script without specifying -eMailSender/Recipient/Server parameters:
 
