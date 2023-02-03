@@ -18,7 +18,7 @@
 
                                         The script will send email with those info at the end
 
-
+# Modification: added send e-mail as parameters
 
 
 #--------------
@@ -47,6 +47,13 @@ Red cells, represent the server on which the database is mounted and it happens 
 # Script Start
 #--------------
 #>
+
+[CmdletBinding()]
+Param (
+   [string]$eMailSender="administrator@canadadrey.ca",
+   [string]$eMailRecipient="administrator@canadadrey.ca",
+   [string]$eMailServer="E2019-01@canadadrey.ca"
+)
 
 $CurrentScriptLocation = Get-Location
 
@@ -479,7 +486,8 @@ Add-Content $filename $Output
 #-------------------- START Send Email-------------------
 
 
-send-mailmessage -from Administrator@canadadrey.ca -to Administrator@canadadrey.ca -subject "DAG Layout Report _$(Get-Date -f 'yyyy-MM-dd')" -SMTPServer E2016-01.canadadrey.ca -Attachments $fileName
+
+send-mailmessage -from $eMailSender -to $eMailRecipient -subject "DAG Layout Report _$(Get-Date -f 'yyyy-MM-dd')" -SMTPServer $eMailServer -Attachments $fileName
 
 #-------------------- END Send Email---------------------
 
