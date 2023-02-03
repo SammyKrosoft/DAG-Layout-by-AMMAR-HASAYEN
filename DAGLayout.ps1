@@ -479,7 +479,6 @@ Add-Content $filename $Output
 #-------------------- START Send Email-------------------
 
 
-#SendEmail  Admin@forces.gc.ca bernard.chouinard@forces.gc.ca "DND DAG Layout Report _$(Get-Date -f 'yyyy-MM-dd')" IMG-LSL-EP00895.forces.mil.ca $fileName
 send-mailmessage -from Administrator@canadadrey.ca -to Administrator@canadadrey.ca -subject "DAG Layout Report _$(Get-Date -f 'yyyy-MM-dd')" -SMTPServer E2016-01.canadadrey.ca -Attachments $fileName
 
 #-------------------- END Send Email---------------------
