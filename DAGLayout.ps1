@@ -3,7 +3,7 @@
 #--------------
 
 # Script Name                :         Exchange DAG Database Distribution Table
-# Script Version             :         1.0
+# Script Version             :         1.1
 # Author                     :         Ammar Hasayen
 # Blog                       :         http://ammarhasayen.wordpress.com
 # Description                :         This script will Query all DAGs in your environment and will create table with the following information
@@ -18,7 +18,10 @@
 
                                         The script will send email with those info at the end
 
-# Modification: added send e-mail as parameters
+# Slight Modification by Sam and Bernie Chouinard: 
+- added color when database is mounted correctly on Activation Preference = 1 (dark green)
+- added send e-mail info as optional parameters with default values
+- generating different HTML file each run with date and time stamp (might need to cleanup directory with lots of HTM if need be)
 
 
 #--------------
@@ -56,14 +59,16 @@ Param (
 )
 
 $CurrentScriptLocation = Get-Location
+$File = "\DAG_DB_Layout$(Get-Date -Format 'yyyy-MM-dd_hhmmss').htm"
+
 
 New-Item `
  -ItemType file `
-    -Name DAG_DB_Layout.htm `
+    -Name $File `
       -path $CurrentScriptLocation  `
             -Force
 
-$filename = "$($CurrentScriptLocation)"+ "\DAG_DB_Layout.htm"
+$filename = "$($CurrentScriptLocation)"+ $File
 
 
 #--------------
@@ -488,6 +493,9 @@ Add-Content $filename $Output
 
 
 send-mailmessage -from $eMailSender -to $eMailRecipient -subject "DAG Layout Report _$(Get-Date -f 'yyyy-MM-dd')" -SMTPServer $eMailServer -Attachments $fileName
+
+#NOTE: if you receive a 5.7.1 Message rejected as spam by Content Filtering you can run the below:
+# Set-ContentFilterConfig -BypassedSenderDomains yourdomain
 
 #-------------------- END Send Email---------------------
 
